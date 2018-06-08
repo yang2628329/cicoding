@@ -1,0 +1,31 @@
+package com.cicoding.service.impl;
+
+
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.cicoding.bean.${model1};
+import com.cicoding.dao.${model1}Mapper;
+import com.cicoding.service.${model1}Service;
+import com.cicoding.utils.JqgridUtil;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ${model1}ServiceImpl extends ServiceImpl<${model1}Mapper, ${model1}> implements ${model1}Service {
+	@Autowired
+	private JqgridUtil jqgridUtil;
+	
+	@Override
+	public String getShowJson(int page, int count) {
+
+        List<${model1}> all = baseMapper.selectList(null);
+        int toIndex = count * page;
+        if (all.size() < toIndex) {
+            toIndex = all.size();
+        }
+        List<${model1}> list = all.subList(count * (page - 1), toIndex);
+        return jqgridUtil.getJson(list, page + "", all.size() , count);
+    
+	}
+
+}
