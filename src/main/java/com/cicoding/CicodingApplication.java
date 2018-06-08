@@ -14,6 +14,5 @@ public class CicodingApplication {
 		System.out.println("***************************************"); 
 		System.out.println("*******    Cicoding-Thymeleaf    ******"); 
 		
-		
 	}
 }
