@@ -13,6 +13,5 @@ public class CicodingApplication {
 		System.out.println("*      cicoding start-up success      *");
 		System.out.println("***************************************"); 
 		System.out.println("*******    Cicoding-Thymeleaf    ******"); 
-		
 	}
 }
